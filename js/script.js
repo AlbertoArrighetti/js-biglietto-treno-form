@@ -1,46 +1,48 @@
-// Scrivere un programma che chieda all’utente:
-// Il numero di chilometri da percorrere
-// Età del passeggero
-
-
-// Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
-// il prezzo del biglietto è definito in base ai km (0.21 € al km)
-// va applicato uno sconto del 20% per i minorenni
-// va applicato uno sconto del 40% per gli over 65.
-
-
-
 // elementi del DOM
-const fullNameEl = document.querySelector("#passangerName");
-const kmEl = document.querySelector("#kmNumber");
-const ageEl = document.querySelector("#age");
+let fullNameEl = document.querySelector("#passangerName");
+let kmEl = document.querySelector("#kmNumber");
+let ageEl = document.querySelector("#age");
 
 const buttonEl = document.querySelector("#btn");
 
-
-
-
-
-
-
-
+// flag
+let error = false;
 
 // risultato forma umana dopo inserimento dati e calcolo sconto
 buttonEl.addEventListener(`click`,
     function () {
 
-        document.querySelector("h2").innerHTML = 
+        // prezzi base
+        let basePrice = Number(kmEl.value) * 0.21;
+        let discountPrice = basePrice;
 
-        // test
-        "ciao " + fullNameEl.value + `Distanza da percorre: ${kmEl.value}, Età passeggero ${ageEl.value}`;
+
+        // verifica eta
+        if(ageEl.value > 130){
+            alert("L'età inserita non è corretta, riprovare.")
+            error = true
+        }
 
 
+        // sconti applicati
+        if (error == false){
+            if(ageEl.value < 18){
+                discountPrice = basePrice - basePrice * 0.2;
+            }else if(ageEl.value > 65){
+                discountPrice = basePrice - basePrice * 0.4;
+            }
+        }
         
-        console.log(
-            fullNameEl,
-            kmEl,
-            ageEl,
-        );
+        
+
+
+        if(! error){
+            document.getElementById("result").innerHTML = `
+            Il prezzo del tuo biglietto è: ${discountPrice.toFixed(2)}`
+        }
+
+        // log
+        console.log(discountPrice); 
     }
 )
 

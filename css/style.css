@@ -3,3 +3,106 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: sans-serif;
+    background-color: #b91450;
+}
+
+/* titolo */
+.title, .sub-title{
+    text-align: center;
+    padding: 24px 0;
+
+    font-size: 24px;
+    text-transform: uppercase;
+    color: white;
+}
+
+
+/* contenitori condivisi */
+.container{
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+
+    background-color: white;
+}
+
+/* form */
+.top-part{
+    border-radius: 25px;
+}
+.row{
+    display: flex;
+    justify-content: center;
+
+    gap: 70px;
+}
+
+/* card  */
+.card {
+    margin-bottom: 40px;
+}
+.card label{
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 0 20px;
+
+    text-align: center;
+    font-weight: bold;
+    color: #b91450;
+}
+.card input{
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #b91450;
+    border-radius: 15px;
+}
+
+/* btn */
+#btn{
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 8px 6px;
+
+    color: #b91450;
+    border-radius: 10px;
+}
+
+/* biglietto */
+
+.bottom-part{
+    padding: 24px;
+}
+.details{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.ticket{
+    justify-content: flex-start;
+    gap: 26px;
+
+    height: 160px;
+
+    border-bottom: 1px solid #808080;
+    border-top: 1px solid #808080;
+}
+.ticket > *{
+    padding: 24px 0;
+}
+.passenger-name{
+    padding: 24px;
+    background-color: #808080;
+}
+.passenger-name span{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.single-detail{
+    font-weight: bold;
+    margin: 0 20px;
+}

@@ -10,36 +10,71 @@
 </head>
 <body>
 
-
-    <div>
-        <label for="passangerName">Nome e cognome.
-            <input type="text" id="passangerName">
-        </label>
-    </div>
-
-
-
+    <!-- titolo  -->
+    <h1 class="title">Calcola la tariffa del tuo biglietto</h1>
     
-    <div>
-        <label for="kmNumber">Inserire Km da percorrere.
-            <input type="number" min="0" id="kmNumber">
-        </label>
+    <form class="container top-part">
+        <div class="row">
+            <div class="card">
+                <label for="passangerName">Nome e cognome.
+                </label>
+                <input type="text" id="passangerName">
+            </div>
+            
+            <!-- label per km -->
+            <div class="card">
+                <label for="kmNumber">Inserire Km da percorrere.
+                </label>
+                <input type="number" min="0" id="kmNumber">
+            </div>
+            
+            <!-- label per età -->
+            <div class="card">
+                <label for="age">Inserire età passeggero.
+                </label>
+                <input type="number" min="0" max="130" id="age">
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <button id="btn">
+                Submit
+            </button>
+        </div>
+        
+    </form>
+    
+    <h2 class="sub-title">
+        Il tuo biglietto
+    </h2>
+    <div class="container bottom-part">
+        <div class="details">
+            Dettaglio passeggeri
+        </div>
+        <div class="row ticket">
+
+            <div class="passenger-name">
+                <span>Nome passeggero</span>
+            </div>
+            <div class="type">
+                <span class="single-detail">Offerta</span>
+            </div>
+            <div class="class">
+                <span class="single-detail">Carrozza</span>
+            </div>
+            <div class="code">
+                <span class="single-detail">Codice CP</span>
+            </div>
+            <div class="cost">
+                <span class="single-detail">Costo biglietto</span>
+            </div>
+        </div>
+        
     </div>
-    <div>
-        <label for="age">Inserire età passeggero.
-            <input type="number" min="0" max="130" id="age">
-        </label>
-    </div>
-
-    <button id="btn">
-        Submit
-    </button>
-
-
-    <h2 id="result"></h2>
-
-
-    <!-- link a js -->
-    <script src="./js/script.js"></script>
-</body>
-</html>
+        
+        
+        <!-- link a js -->
+        <script src="./js/script.js"></script>
+    </body>
+    </html>

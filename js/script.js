@@ -5,14 +5,14 @@ let ageEl = document.querySelector("#age");
 
 const buttonEl = document.querySelector("#btn");
 
-// flag
+// flag per rilevare errore 
 let error = false;
 
-// risultato forma umana dopo inserimento dati e calcolo sconto
+// inserimento funzione dopo click
 buttonEl.addEventListener(`click`,
     function () {
 
-        // prezzi base
+        // prezzi 
         let basePrice = Number(kmEl.value) * 0.21;
         let discountPrice = basePrice;
 
@@ -35,10 +35,10 @@ buttonEl.addEventListener(`click`,
         
         
 
-
+        // risultato in pagina
         if(! error){
             document.getElementById("result").innerHTML = `
-            Il prezzo del tuo biglietto è: ${discountPrice.toFixed(2)}`
+            Il prezzo del tuo biglietto è: € ${discountPrice.toFixed(2)}`
         }
 
         // log
